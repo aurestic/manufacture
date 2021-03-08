@@ -17,6 +17,6 @@ class ProcurementOrder(models.Model):
         if mrp_notes:
             old = (
                 res.get('notes') and
-                ('{other}\n'.format(other=res.get('notes', ''))) or '')
-            res['notes'] = '{old}{mine}'.format(old=old, mine=mrp_notes)
+                (u'{other}\n'.format(other=res.get('notes', ''))) or u'')
+            res['notes'] = u'{old}{mine}'.format(old=old, mine=mrp_notes)
         return res
